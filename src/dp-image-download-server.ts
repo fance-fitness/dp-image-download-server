@@ -24,14 +24,17 @@ app.get('/getImagePathFromHTML', (req, res) => {
   const currentHTML = fs.read(path.join(currentPath, '../current.html'))
 
   const imagePath = Provider.getImagePath(currentHTML)
-  const downloadResult = Provider.downloadImage(imagePath, "fritz")
-  console.log(JSON.stringify(downloadResult))
   res.json({
     path: imagePath
   })
-
 })
 
+app.get('/downloadImage/id/:id', async (req, res) => {
+  const basePath = 'https://fance-stiftung.de/api/events/img/'
+  const path = `${basePath}${req.params.id}`
+  const downloadResult = await Provider.downloadImage(path, "fritz")
+  console.log(JSON.stringify(downloadResult))
+})
 var httpServer = http.createServer(app);
 httpServer.listen(httpPort);
 console.log(`http dp-dates-server listening on: ${httpPort}`)
