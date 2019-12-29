@@ -2,6 +2,7 @@ import express = require('express')
 import * as path from 'path'
 import * as fs from 'fs-sync'
 import { Provider } from './provider';
+
 var http = require('http');
 var https = require('https');
 const currentPath = path.resolve(path.dirname(''))
