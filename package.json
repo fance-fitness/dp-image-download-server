@@ -14,7 +14,7 @@
     "@types/node": "^13.1.1",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fs-sync": "^1.0.6",
     "image-downloader": "^3.5.0",
     "path": "^0.12.7"
